@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manupilation part 3</title>
+</head>
+<body style="background-color: black; color: white;">
+    <label for="to-do-list"> To-Do-List-Data: </label>
+    <input type="text" id="to-do-list" name="to-do-list">
+    <br>
+    <br>
+    <input type="button" onclick="newDiv()" value="add it to database">
+    <input type="button" onclick="removeDiv()" value="remove it from database">
+    <div id="todo-container"></div>
+</body>
+<script>
+    function newDiv(){
+    const newdiv = document.createElement('div');
+    newdiv.id = 'new-div';
+    const toDoName = document.querySelector('#to-do-list'); 
+    newdiv.className = 'main';
+    newdiv.style.backgroundColor = 'green';
+    newdiv.style.display = 'flex';
+    newdiv.style.margin = '50px';
+    newdiv.style.padding = '50px';
+    newdiv.style.alignContent = 'center';
+    newdiv.style.alignItems = 'center';
+    newdiv.innerHTML = toDoName.value;
+    const container = document.querySelector('#todo-container');
+    container.appendChild(newdiv);
+    }
+
+    function removeDiv(){
+        const container = document.querySelector('#todo-container');
+        container.lastChild.remove()
+    }
+</script>
+</html>
