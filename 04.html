@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="button" onclick="colorChange()"> change to dark color</button>
+    <p> hello world </p>
+    <p> how are you </p>
+</body>
+<script>
+    function colorChange(){
+        const bodyColor = document.querySelector('Body')
+        bodyColor.style.backgroundColor = 'black'
+        bodyColor.style.color = 'white'
+        document.body.appendChild('bodyColor')
+    }
+</script>
+
+</html>
